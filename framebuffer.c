@@ -193,7 +193,7 @@ int main()
 		    }
 		}
 	    ytemp = y;
-	    draw_kata(&x, &y,"Azka      Bekasi");
+	    draw_kata(&x, &y,"Azka    MAN Insan Cendekia Serpong");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
