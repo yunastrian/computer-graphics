@@ -71,7 +71,7 @@ int main()
 	    
 	    y += 32;
 	    int ytemp = y;
-	    draw_kata(&x, &y,"Yoga P       SMAN 1 Pemali");
+	    draw_kata(&x, &y,"Yoga   SMAN 1 Pemali");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -84,7 +84,7 @@ int main()
 		    }
 		}
 	    ytemp = y;
-	    draw_kata(&x, &y,"Hafis AI     SMAN 1 Padang");
+	    draw_kata(&x, &y,"Hafis  SMAN 1 Padang");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -98,7 +98,7 @@ int main()
 		    }
 		}
 	    ytemp = y;
-	    draw_kata(&x, &y,"M Husein A   SMAN 1 Klaten");
+	    draw_kata(&x, &y,"Husein SMAN 1 Klaten");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -113,7 +113,7 @@ int main()
 		}
 
 	    ytemp = y;
-	    draw_kata(&x, &y,"Irfan I A     SMAN 1 Bogor");
+	    draw_kata(&x, &y,"Irfan  SMAN 1 Bogor");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -127,7 +127,7 @@ int main()
 		    }
 		}
 	    ytemp = y;
-	    draw_kata(&x, &y,"Kurniandha   SMAN 2 Kediri");
+	    draw_kata(&x, &y,"Nandha SMAN 2 Kediri");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -141,7 +141,7 @@ int main()
 		    }
 		}
 	    ytemp = y;
-	    draw_kata(&x, &y,"Azka W  MAN Insan Cendekia");
+	    draw_kata(&x, &y,"Azka   MAN Insan Cndekia");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -155,7 +155,7 @@ int main()
 		    }
 		}
 	    ytemp = y;
-	    draw_kata(&x, &y,"Trian ATS    SMAN 2 Cimahi");
+	    draw_kata(&x, &y,"Trian  SMAN 2 Cimahi");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -170,7 +170,7 @@ int main()
 		}
 
 	    //y0 -= cepetnaik;
-	    usleep(5000);
+	    usleep(10000);
 	}
     munmap(fb, screensize);
     close(fb_driver);
