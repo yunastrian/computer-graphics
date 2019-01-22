@@ -1,12 +1,10 @@
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <linux/fb.h>
-#include <sys/mman.h>
-#include <sys/ioctl.h>
-#include <math.h>
 #include "kamus.h"
+
+char *fb = 0;
+int fb_driver = 0;
+
+int layarx = 800;
+int layary = 600;
 
 void draw_char_A(int x, int y){
     unsigned char a[24][24] = {
@@ -1065,8 +1063,3 @@ void refresh(int x0, int x1, int y0, int y1){
         }
     }
 }
-
-
-
-
-
