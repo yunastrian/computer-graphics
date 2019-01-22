@@ -1,3 +1,11 @@
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <linux/fb.h>
+#include <sys/mman.h>
+#include <sys/ioctl.h>
+#include <math.h>
 #include "kamus.h"
 
 int main()
@@ -28,8 +36,6 @@ int main()
       perror("Error: failed to map framebuffer device to memory");
       exit(4);
   }
-
-//=======================================================================================
 
     clear_screen(800, 600);
     int x = 25;
@@ -65,7 +71,7 @@ int main()
 	    
 	    y += 32;
 	    int ytemp = y;
-	    draw_kata(&x, &y,"Yoga      Belitung");
+	    draw_kata(&x, &y,"Yoga P       SMAN 1 Pemali");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -78,7 +84,7 @@ int main()
 		    }
 		}
 	    ytemp = y;
-	    draw_kata(&x, &y,"Hafis     Padang");
+	    draw_kata(&x, &y,"Hafis AI     SMAN 1 Padang");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -92,7 +98,7 @@ int main()
 		    }
 		}
 	    ytemp = y;
-	    draw_kata(&x, &y,"Husein    Klaten");
+	    draw_kata(&x, &y,"M Husein A   SMAN 1 Klaten");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -107,7 +113,7 @@ int main()
 		}
 
 	    ytemp = y;
-	    draw_kata(&x, &y,"Irfan     Bogor");
+	    draw_kata(&x, &y,"Irfan I A     SMAN 1 Bogor");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -121,7 +127,7 @@ int main()
 		    }
 		}
 	    ytemp = y;
-	    draw_kata(&x, &y,"Nandha    Kediri");
+	    draw_kata(&x, &y,"Kurniandha   SMAN 2 Kediri");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -135,7 +141,7 @@ int main()
 		    }
 		}
 	    ytemp = y;
-	    draw_kata(&x, &y,"Azka      MAN Insan Cendekia Serpong");
+	    draw_kata(&x, &y,"Azka W  MAN Insan Cendekia");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -149,7 +155,7 @@ int main()
 		    }
 		}
 	    ytemp = y;
-	    draw_kata(&x, &y,"Trian     Cimahi");
+	    draw_kata(&x, &y,"Trian ATS    SMAN 2 Cimahi");
 	    
 	    for(p = 0; p < layarx; p++)
 		for(q= ytemp; q < y; q++){
@@ -171,7 +177,3 @@ int main()
     return 0;
 
 }
-//End of main
-
-//######################################################################################
-

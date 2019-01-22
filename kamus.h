@@ -13,11 +13,11 @@ typedef struct{
 
 struct fb_var_screeninfo var_info;
 struct fb_fix_screeninfo fix_info;
-char *fb; //pointer framebuffer
-int fb_driver; //pointer framebuffer driver
+extern char *fb; //pointer framebuffer
+extern int fb_driver; //pointer framebuffer driver
 
-int layarx;
-int layary;
+extern int layarx;
+extern int layary;
 
 unsigned char buffer_r[800][600];
 unsigned char buffer_g[800][600];
