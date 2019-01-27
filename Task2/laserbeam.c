@@ -75,7 +75,6 @@ int main() {
 			}
 		}
 		xpesawat--;
-		printf("%d\n", y);
 		usleep(10000);
 	}
 	munmap(fb, screensize);
