@@ -33,7 +33,7 @@ int main() {
 	color bg = {0,0,0,0};
     for (int y0=600; y0>=-600; y0--) {
 		int y = y0;
-		refresh(0, 800, y, 600);
+		refresh(0, 800, 0, 600);
 		draw_turret(388,576);
 		int p, q;
 		for(p = 388; p < 412; p++){
