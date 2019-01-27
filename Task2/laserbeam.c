@@ -35,6 +35,15 @@ int main() {
     for (int y0=600; y0>=-600; y0--) {
 		int y = y0;
 		refresh(0, 800, 0, 600);
+		for(q = 0; q < 24; q++){
+			color c = bg
+			if (q < layary){
+				if(xpesawat<800) {
+					int p = xpesawat+1;
+					draw_dot(p,q,&c);
+				}
+			}
+		}
 		draw_turret(388,576);
 		int p, q;
 		for(p = 388; p < 412; p++){
