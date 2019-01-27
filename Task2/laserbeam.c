@@ -31,6 +31,7 @@ int main() {
 	clear_screen(800, 600);
 
 	color bg = {0,0,0,0};
+	int xpesawat = 800;
     for (int y0=600; y0>=-600; y0--) {
 		int y = y0;
 		refresh(0, 800, 0, 600);
@@ -46,10 +47,15 @@ int main() {
 			}
 		}
 
-		int xpesawat = y + 100 - 24;
+		if (xpesawat < -24) {
+			xpesawat = 800;
+		}
 		int ypesawat = 0;
 		draw_pesawat(xpesawat, ypesawat);
 		for(p = xpesawat; p < xpesawat+24; p++){
+			if (p < 0) {
+				p = 0;
+			}
 			for(q = ypesawat; q < ypesawat+24; q++){
 				color c = {200,0,0,255};
 				if(buffer_r[p][q] == 0) c = bg;
