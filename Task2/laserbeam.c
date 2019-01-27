@@ -64,6 +64,7 @@ int main() {
 				}
 			}
 		}
+		xpesawat--;
 		usleep(10000);
 	}
 	munmap(fb, screensize);
