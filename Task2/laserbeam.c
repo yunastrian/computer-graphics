@@ -31,8 +31,8 @@ int main() {
 	clear_screen(800, 600);
 
 	color bg = {0,0,0,0};
-	int xpesawat = 800;
-    for (int y0=600; y0>=-600; y0--) {
+	int xpesawat = 776;
+    for (int y0=600; y0>=-24; y0--) {
 		int y = y0;
 		refresh(0, 800, 0, 600);
 		for(q = 0; q < 24; q++){
@@ -57,8 +57,9 @@ int main() {
 		}
 
 		if (xpesawat < -24) {
-			xpesawat = 800;
+			xpesawat = 776;
 		}
+
 		int ypesawat = 0;
 		draw_pesawat(xpesawat, ypesawat);
 		for(p = xpesawat; p < xpesawat+24; p++){
@@ -74,6 +75,7 @@ int main() {
 			}
 		}
 		xpesawat--;
+		printf("%d\n", y);
 		usleep(10000);
 	}
 	munmap(fb, screensize);
