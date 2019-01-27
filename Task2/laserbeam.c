@@ -50,7 +50,7 @@ int main() {
 		int ypesawat = 0;
 		draw_pesawat(xpesawat, ypesawat);
 		for(p = xpesawat; p < xpesawat+24; p++){
-			for(q = ypesawat; q < ypesawat+24; 1++){
+			for(q = ypesawat; q < ypesawat+24; q++){
 				color c = {200,0,0,255};
 				if(buffer_r[p][q] == 0) c = bg;
 				if (q < layary){
