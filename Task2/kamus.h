@@ -23,8 +23,8 @@ unsigned char buffer_r[800][600];
 unsigned char buffer_g[800][600];
 unsigned char buffer_b[800][600];
 
-void draw_pesawat(int x, int y);
-void draw_turret(int x, int y);
+void draw_pesawat(int x, int y, color* c);
+void draw_turret(color *c);
 void draw_char_A(int x, int y);
 void draw_char_B(int x, int y);
 void draw_char_C(int x, int y);
@@ -57,5 +57,6 @@ void draw_char(int x, int y, char c);
 void draw_kata(int* x, int* y, char* kata);
 void draw_spasi(int x, int y);
 void draw_dot(int x, int y, color* c);
+void draw_garis(int x0, int x1, int y0, int y1, color* c);
 void clear_screen(int width, int height);
 void refresh(int x0, int x1, int y0, int y1);
