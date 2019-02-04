@@ -60,3 +60,6 @@ void draw_dot(int x, int y, color* c);
 void draw_garis(int x0, int x1, int y0, int y1, color* c);
 void clear_screen(int width, int height);
 void refresh(int x0, int x1, int y0, int y1);
+void jedug(int x0, int y0, int x1, int y1);
+//function
+int isAnomali(int x, int y);

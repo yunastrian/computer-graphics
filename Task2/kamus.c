@@ -1191,3 +1191,28 @@ int isAnomali(int x, int y){
   }
   return anomali;
 }
+
+
+void jedug(int x0, int y0, int x1, int y1){
+  x0--;
+  y0--;
+  x1++;
+  y1++;
+  int status=0;
+  for (int y=y0, y<=y1, y++){
+    for (int x=x0, x<=x1, x++){
+      if(buffer_r[x][y] != 0){
+        if (!isAnomali(x,y)){
+            if (status == 1){
+                  status=0;
+            }else{
+                  status=1;
+            }
+        }
+      }
+      if (status==1){
+        buffer_r[x][y] = 1;
+      }
+    }
+  }
+}
