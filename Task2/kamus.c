@@ -1194,24 +1194,26 @@ int isAnomali(int x, int y){
 
 
 void jedug(int x0, int y0, int x1, int y1){
+  //kasih ofset titik sejauh 1 pixel
   x0--;
   y0--;
   x1++;
   y1++;
-  int status=0;
+
+  int status=0; // asumsi status 0, kalo status 0 berarti diem, kalo statusnya 1 masukin angka 1 ke buffer
   for (int y=y0, y<=y1, y++){
     for (int x=x0, x<=x1, x++){
-      if(buffer_r[x][y] != 0){
-        if (!isAnomali(x,y)){
+      if(buffer_r[x][y] != 0){// cek apakah ketemu angka selain 0, kalo ada berarti dia ketemu titik
+        if (!isAnomali(x,y)){// pertama cek apakah titik yang ketemu tersebut anomali bukan, kalo iya, abaikan, kalo bukan maka ubah status
             if (status == 1){
-                  status=0;
+                  status=0;// ubah status dari 1 ke 0
             }else{
-                  status=1;
+                  status=1;// ubah status dari 0 ke 1
             }
         }
       }
-      if (status==1){
-        buffer_r[x][y] = 1;
+      if (status==1){// cek apakah statusnya angka 1 bukan, kalo iya gali, kalo bukan lewati
+        buffer_r[x][y] = 1; // isi buffer dengan 1
       }
     }
   }
