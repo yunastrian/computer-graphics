@@ -1,3 +1,4 @@
+
 #include "kamus.h"
 
 char *fb = 0;
@@ -1158,4 +1159,35 @@ void refresh(int x0, int x1, int y0, int y1){
 	        }
         }
     }
+}
+
+
+
+int isAnomali(int x, int y){
+  int anomali=0;
+  int cb1=0 , cb2=0;
+  if (buffer_r[x-1][y-1] != 0){
+    cb1++;
+  }
+  if (buffer_r[x][y-1] != 0){
+    cb1++;
+  }
+  if (buffer_r[x+1][y-1] != 0){
+    cb1++;
+  }
+  if (buffer_r[x-1][y+1] != 0){
+    cb2++;
+  }
+  if (buffer_r[x][y+1] != 0){
+    cb2++;
+  }
+  if (buffer_r[x+1][y+1] != 0){
+    cb2++;
+  }
+  if ((cb1 == 1) || (cb2 == 1)) {
+    anomali = 0;
+  } else{
+    anomali = 1;
+  }
+  return anomali;
 }
