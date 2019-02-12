@@ -1,4 +1,3 @@
-
 #include "kamus.h"
 
 char *fb = 0;
@@ -1235,3 +1234,16 @@ void jedug(int x0, int y0, int x1, int y1){
     }
   }
 }
+
+void rotasi(int xp, int yp, int *x, int *y, int sudut) {
+/*initial state:
+    xp dan yp merupakan titik acuan untuk x dan y dalam melakukan rotasi
+*/
+    int x1, y1;//x1 dan y1 merupakan titik hasil rotasi
+    double rad = PI * sudut / 180;
+    x1 = xp + round(((*x - xp) * cos(rad)) - ((*y - yp)* sin(rad)));
+    y1 = yp + round(((*x - xp) * sin(rad)) + ((*y - yp)* cos(rad)));
+    *x=x1;
+    *y=y1;
+    return;
+}    

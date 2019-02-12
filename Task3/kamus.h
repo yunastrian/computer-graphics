@@ -7,6 +7,8 @@
 #include <sys/ioctl.h>
 #include <math.h>
 
+#define PI 3.14159265
+
 #define SCREEN_DIAGONAL 1000 // Jumlah maksimum titik yang ada pada diagonal layar
 
 typedef struct{
@@ -63,6 +65,8 @@ void draw_garis(int x0, int x1, int y0, int y1, color* c);
 void clear_screen(int width, int height);
 void refresh(int x0, int x1, int y0, int y1);
 void jedug(int x0, int y0, int x1, int y1);
+void rotasi(int xp, int yp, int *x, int *y, int sudut);
+void line(int x0, int y0, int x1, int y1, int buf[SCREEN_DIAGONAL][2], int *length);
 //function
 int isAnomali(int x, int y);
-void line(int x0, int y0, int x1, int y1, int buf[SCREEN_DIAGONAL][2], int *length);
+
