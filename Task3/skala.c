@@ -19,7 +19,7 @@ int main() {
     int x,y;
     x=3;
     y=3;
-    rotasi (&x,&y,2);
+    skala(&x,&y,2);
     printf("%d %d",x,y);
 
     return 0;
