@@ -113,39 +113,33 @@ int main() {
 		color yellow = {0,255,255,255};
 		color red = {255,0,0,255};
 		color blue = {255,255,0,255};
-		
-		draw_garis(x11,x12,y11,y12,&yellow);
-		draw_garis(x12,x13,y12,y13,&yellow);
-		draw_garis(x13,x14,y13,y14,&yellow);
-		draw_garis(x14,x11,y14,y11,&yellow);
+		for (int i=y12; i<y13; i++) {
+			draw_garis(x11,x12,i,i,&red);
+		}
 	    
-		draw_garis(x21,x22,y21,y22,&blue);
-		draw_garis(x22,x23,y22,y23,&blue);
-		draw_garis(x23,x24,y23,y24,&blue);
-		draw_garis(x24,x21,y24,y21,&blue);
+		for (int i=y23; i<y22; i++) {
+			draw_garis(x21,x22,i,i,&blue);
+		}
 
-		draw_garis(x25,x26,y25,y26,&blue);
-		draw_garis(x26,x27,y26,y27,&blue);
-		draw_garis(x27,x28,y27,y28,&blue);
-		draw_garis(x28,x25,y28,y25,&blue);
+		for (int i=y26; i<y27; i++) {
+			draw_garis(x25,x26,i,i,&blue);
+		}
 
-		draw_garis(x31,x32,y31,y32,&blue);
-		draw_garis(x32,x33,y32,y33,&blue);
-		draw_garis(x33,x34,y33,y34,&blue);
-		draw_garis(x34,x31,y34,y31,&blue);
+		for (int i=y33; i<y32; i++) {
+			draw_garis(x31,x32,i,i,&blue);
+		}		
 
-		draw_garis(x35,x36,y35,y36,&blue);
-		draw_garis(x36,x37,y36,y37,&blue);
-		draw_garis(x37,x38,y37,y38,&blue);
-		draw_garis(x38,x35,y38,y35,&blue);
+		for (int i=y36; i<y37; i++) {
+			draw_garis(x35,x36,i,i,&blue);
+		}
 
-		draw_garis(x1,x2,y1,y2,&red);
-		draw_garis(x3,x4,y3,y4,&red);
+		draw_garis(x1,x2,y1,y2,&yellow);
+		draw_garis(x3,x4,y3,y4,&yellow);
 
-		rotasi(pusatx+25,201,&x1,&y1,-5);
-		rotasi(pusatx+25,201,&x2,&y2,-5);
-		rotasi(pusatx+25,201,&x3,&y3,-5);
-		rotasi(pusatx+25,201,&x4,&y4,-5);		
+		rotasi(pusatx+25,201,&x1,&y1,5);
+		rotasi(pusatx+25,201,&x2,&y2,5);
+		rotasi(pusatx+25,201,&x3,&y3,5);
+		rotasi(pusatx+25,201,&x4,&y4,5);		
 		
 		x1++;
 		x2++;

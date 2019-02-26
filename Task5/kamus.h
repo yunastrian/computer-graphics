@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <fcntl.h>
+#include <termios.h>
 #include <linux/fb.h>
 #include <sys/mman.h>
 #include <sys/ioctl.h>
@@ -28,7 +29,7 @@ unsigned char buffer_r[800][600];
 unsigned char buffer_g[800][600];
 unsigned char buffer_b[800][600];
 
-
+void rotasi(int xp, int yp, int *x, int *y, int sudut);
 void draw_badan_left(int x, int y, color* c);
 void draw_kepala_left(int x, int y, color* c);
 void draw_pesawat_left(int x, int y, color* c);
