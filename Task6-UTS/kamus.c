@@ -119,28 +119,36 @@ void draw_dot(int x, int y, color* c){
     kemudian memasukkannya ke dalam buf. Jumlah titik dimasukkan ke length.
 */
 void line(int x0, int y0, int x1, int y1, int buf[SCREEN_DIAGONAL][2], int *length) {
-    int i, x, y;
-    double m, c;
+    int dx, dy, steps, i, x, y;
+    double x_inc, y_inc, x_double, y_double;
 
-    /* Menghitung gradien dan konstanta */
-    m = (float) (y1 - y0) / (x1 - x0);
-    c = (float) y0 - (m * x0);
+    // Menghitung dx & dy
+    dx = x1 - x0;
+    dy = y1 - y0;
 
-    x = x0;
-    y = y0;
-    for (i = 0; i < SCREEN_DIAGONAL; i++) {
+    // Menghitung langkah yang dibutuhkan untuk menghasilkan pixel
+    steps = abs(dx) > abs(dy) ? abs(dx) : abs(dy);
+
+    // Menghitung increment pada x & y untuk setiap langkah
+    x_inc = (double) dx / steps;
+    y_inc = (double) dy / steps;
+
+    x_double = x0;
+    y_double = y0;
+    for (i = 0; i < steps; i++) {
+        /* Mendapatkan nilai integer dari x dan y */
+        x = round(x_double);
+        y = round(y_double);
+
         /* Mengisikan (x, y) ke elemen array ke-i */
         buf[i][0] = x;
         buf[i][1] = y;
 
-        if (x == x1 && y == y1) {
-            *length = i + 1;
-            break;
-        }
-
-        x++;
-        y = round((m * x) + c);
+        x_double += x_inc;
+        y_double += y_inc;
     }
+
+    *length = i;
 }
 
 void draw_garis(int x0, int x1, int y0, int y1, color* c) {
