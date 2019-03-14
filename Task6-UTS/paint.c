@@ -99,6 +99,7 @@ int main() {
     int barselect = 0;
     
     int setColor = RED;
+    int active = 0;
 
     while (1) {
     	set_mode(1);
@@ -106,7 +107,7 @@ int main() {
     	// Draw Cursor
 		//refresh(0, 800, 0, 600);    	
 		render_canvas();
-		draw_cursor(cursorx, cursory, &green);
+		draw_cursor(cursorx, cursory, &bg);
     	// Read Key
 		while (1) {
 			int c;
@@ -129,7 +130,12 @@ int main() {
 						cursory -= 3;
 					}
 				} else if (c == 108) { // l
-					draw_paint(cursorx,cursory,setColor);
+					if (!active) {
+						active = 1;
+					} else {
+						active = 0;
+					}
+					// draw_paint(cursorx,cursory,setColor);
 				} else if (c == 32) { // Space
 					if (barselect == 1) {
 						clear_screen(800,600);
@@ -177,6 +183,105 @@ int main() {
 						barselect = 0;
 					navbar(barselect, setColor);
     				render_navbar(setColor);
+				} else if (c == 103){ // g
+					int awalx = cursorx;
+					int awaly = cursory;
+					draw_paint(awalx,awaly,setColor);
+					while(1){
+						set_mode(1);
+						render_canvas();
+						draw_cursor(cursorx, cursory, &bg);
+						int a;
+						if (a = get_key()) {
+							if (a == 97) {
+								if (cursorx > 10) { // a
+									cursorx -= 3;
+								}
+							} else if (a == 100) { // d
+								if (cursorx < 790) {
+									cursorx += 3;
+								}
+							} else if (a == 115) { // s
+								if (cursory < 590) {
+									cursory += 3;
+								}
+							} else if (a == 119) { // w
+								if (cursory > 44) {
+									cursory -= 3;
+								}
+							} else if (a == 103){
+								int akhirx = cursorx;
+								int akhiry = cursory;
+								int length = 0;
+								draw_paint(akhirx,akhiry,setColor);
+								int buf[SCREEN_DIAGONAL][2];
+								line(awalx, awaly, akhirx, akhiry, buf, &length);
+								for (int i=0;i<length;i++){
+									draw_paint(buf[i][0], buf[i][1], setColor);
+								}
+								break;
+							}
+
+						}
+					}
+				}else if (c == 107) { // k fungsi kotak
+					int x1 = cursorx;
+					int y1 = cursory;
+					draw_paint(x1, y1, setColor);
+					while(1) {
+						set_mode(1);
+						render_canvas();
+						draw_cursor(cursorx, cursory, &bg);
+						int a;
+						if (a = get_key()) {
+							if (a == 97) {
+								if (cursorx > 10) { // a
+									cursorx -= 3;
+								}
+							} else if (a == 100) { // d
+								if (cursorx < 790) {
+									cursorx += 3;
+								}
+							} else if (a == 115) { // s
+								if (cursory < 590) {
+									cursory += 3;
+								}
+							} else if (a == 119) { // w
+								if (cursory > 44) {
+									cursory -= 3;
+								}
+							} else if (c == 107) {
+								int x2 = cursorx;
+								int y2 = cursory;
+								draw_paint(x2, y2, setColor);
+								int	buf1[SCREEN_DIAGONAL][2];
+								int buf2[SCREEN_DIAGONAL][2];
+								int buf3[SCREEN_DIAGONAL][2];
+								int buf4[SCREEN_DIAGONAL][2];
+								int length1, length2, length3, length4;
+								line(x1,y1,x1,y2,buf1,&length1);
+								line(x1,y2,x2,y2,buf2,&length2);
+								line(x2,y2,x2,y1,buf3,&length3);
+								line(x2,y1,x1,y1,buf4,&length4);
+								for (int i=0; i<length1;i++){
+									draw_paint(buf1[i][0], buf1[i][1], setColor);
+								}
+								for (int i=0; i<length2; i++){
+									draw_paint(buf2[i][0], buf2[i][1], setColor);
+								}
+								for (int i=0; i<length3; i++){
+									draw_paint(buf3[i][0], buf3[i][1], setColor);
+								}
+								for (int i=0; i<length4; i++){
+									draw_paint(buf4[i][0], buf4[i][1], setColor);
+								}
+								break;
+							}
+						}
+					}
+				}
+				if (active) {
+					draw_paint(cursorx,cursory,setColor);	
 				}
 				break;
 			}

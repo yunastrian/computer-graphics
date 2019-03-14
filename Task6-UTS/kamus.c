@@ -321,10 +321,10 @@ void render_canvas() {
 	  	color wwarna = {128,0,128,255};
 	  	warna = wwarna;
 	  } else if (canvas[i][j] == 0) {
-	  	color wwarna = {0,0,0,0};
+	  	color wwarna = {255,255,255,255};
 	  	warna = wwarna;
 	  } else {
-	  	color wwarna = {255,255,255,255};
+	  	color wwarna = {0,0,0,0};
 	  	warna = wwarna;
 	  }
       draw_dot(i,j,&warna);
@@ -367,10 +367,10 @@ void render_navbar(int c) {
   	color wwarna = {128,0,128,255};
   	warna = wwarna;
   } else if (c == 0) {
-  	color wwarna = {0,0,0,0};
+  	color wwarna = {255,255,255,255};
   	warna = wwarna;
   } else {
-  	color wwarna = {255,255,255,255};
+  	color wwarna = {0,0,0,0};
   	warna = wwarna;
   }
 
@@ -403,13 +403,13 @@ void navbar(int x, int c) {
   	color wwarna = {128,0,128,255};
   	warna = wwarna;
   } else if (c == 0) {
-  	color wwarna = {0,0,0,0};
-  	warna = wwarna;
-  } else {
   	color wwarna = {255,255,255,255};
   	warna = wwarna;
+  } else {
+  	color wwarna = {0,0,0,0};
+  	warna = wwarna;
   }
-  color white = {255,255,255,255};
+  color white = {200,200,200,255};
   color black = {0,0,0,0};
   color grey = {128,128,128,255};
 
