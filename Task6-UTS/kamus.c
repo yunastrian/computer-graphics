@@ -295,21 +295,44 @@ void draw_paint(int x, int y, int z) {
 }
 
 void render_canvas() {
-  color red = {255,0,0,255};
-  color bg = {0,0,0,0};
-
   for (int i=0; i<800; i++) {
     for (int j=41; j<600; j++) {
-      if (canvas[i][j] == 1) {
-        draw_dot(i,j,&red);
-      } else if (canvas[i][j] == 0) {
-        draw_dot(i,j,&bg);
-      }
+      color warna;
+  
+	  if (canvas[i][j] == 1) {
+	  	color wwarna = {255,0,0,255};
+	  	warna = wwarna;
+	  } else if (canvas[i][j] == 2) {
+	  	color wwarna = {255,140,0,255};
+	  	warna = wwarna;
+	  } else if (canvas[i][j] == 3) {
+	  	color wwarna = {255,255,0,255};
+	  	warna = wwarna;
+	  } else if (canvas[i][j] == 4) {
+	  	color wwarna = {0,255,0,255};
+	  	warna = wwarna;
+	  } else if (canvas[i][j] == 5) {
+	  	color wwarna = {0,0,255,255};
+	  	warna = wwarna;
+	  } else if (canvas[i][j] == 6) {
+	  	color wwarna = {75,0,130,255};
+	  	warna = wwarna;
+	  } else if (canvas[i][j] == 7) {
+	  	color wwarna = {128,0,128,255};
+	  	warna = wwarna;
+	  } else if (canvas[i][j] == 0) {
+	  	color wwarna = {0,0,0,0};
+	  	warna = wwarna;
+	  } else {
+	  	color wwarna = {255,255,255,255};
+	  	warna = wwarna;
+	  }
+      draw_dot(i,j,&warna);
     }
   }
 }
 
-void render_navbar() {
+void render_navbar(int c) {
   color bg = {0,0,0,0};
 
   for (int i=0; i<800; i++) {
@@ -319,9 +342,73 @@ void render_navbar() {
       }
     }
   }
+
+  color warna;
+  
+  if (c == 1) {
+  	color wwarna = {255,0,0,255};
+  	warna = wwarna;
+  } else if (c == 2) {
+  	color wwarna = {255,140,0,255};
+  	warna = wwarna;
+  } else if (c == 3) {
+  	color wwarna = {255,255,0,255};
+  	warna = wwarna;
+  } else if (c == 4) {
+  	color wwarna = {0,255,0,255};
+  	warna = wwarna;
+  } else if (c == 5) {
+  	color wwarna = {0,0,255,255};
+  	warna = wwarna;
+  } else if (c == 6) {
+  	color wwarna = {75,0,130,255};
+  	warna = wwarna;
+  } else if (c == 7) {
+  	color wwarna = {128,0,128,255};
+  	warna = wwarna;
+  } else if (c == 0) {
+  	color wwarna = {0,0,0,0};
+  	warna = wwarna;
+  } else {
+  	color wwarna = {255,255,255,255};
+  	warna = wwarna;
+  }
+
+  for (int xtemp=107; xtemp<=117; xtemp++)
+  	draw_garis(xtemp,xtemp,26,35,&warna);
 }
 
-void navbar(int x) {
+void navbar(int x, int c) {
+  color warna;
+  
+  if (c == 1) {
+  	color wwarna = {255,0,0,255};
+  	warna = wwarna;
+  } else if (c == 2) {
+  	color wwarna = {255,140,0,255};
+  	warna = wwarna;
+  } else if (c == 3) {
+  	color wwarna = {255,255,0,255};
+  	warna = wwarna;
+  } else if (c == 4) {
+  	color wwarna = {0,255,0,255};
+  	warna = wwarna;
+  } else if (c == 5) {
+  	color wwarna = {0,0,255,255};
+  	warna = wwarna;
+  } else if (c == 6) {
+  	color wwarna = {75,0,130,255};
+  	warna = wwarna;
+  } else if (c == 7) {
+  	color wwarna = {128,0,128,255};
+  	warna = wwarna;
+  } else if (c == 0) {
+  	color wwarna = {0,0,0,0};
+  	warna = wwarna;
+  } else {
+  	color wwarna = {255,255,255,255};
+  	warna = wwarna;
+  }
   color white = {255,255,255,255};
   color black = {0,0,0,0};
   color grey = {128,128,128,255};
@@ -376,6 +463,11 @@ void navbar(int x) {
   } else if (x == 3) {
     for (int xtemp=69; xtemp<=103; xtemp++)
       draw_garis(xtemp,xtemp,22,40,&grey);
+  } else if (x == 4) {
+  	for (int xtemp=105; xtemp<=119; xtemp++)
+      draw_garis(xtemp,xtemp,22,40,&grey);
+  	for (int xtemp=107; xtemp<=117; xtemp++)
+  	  draw_garis(xtemp,xtemp,26,35,&warna);
   }
 
   // P
@@ -913,4 +1005,5 @@ void navbar(int x) {
   canvas[101][33] = 9;
   canvas[101][34] = 9;
   canvas[101][35] = 9;
+
 }

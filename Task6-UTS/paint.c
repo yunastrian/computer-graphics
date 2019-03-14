@@ -94,9 +94,11 @@ int main() {
     int cursorx = 50;
     int cursory = 50;
 
-    navbar(0);
-    render_navbar();
+    navbar(0,1);
+    render_navbar(1);
     int barselect = 0;
+    
+    int setColor = RED;
 
     while (1) {
     	set_mode(1);
@@ -127,12 +129,12 @@ int main() {
 						cursory -= 3;
 					}
 				} else if (c == 108) { // l
-					draw_paint(cursorx,cursory,1);
+					draw_paint(cursorx,cursory,setColor);
 				} else if (c == 32) { // Space
 					if (barselect == 1) {
 						clear_screen(800,600);
-						navbar(barselect);
-    					render_navbar();
+						navbar(barselect,setColor);
+    					render_navbar(setColor);
 					} else if (barselect == 2) {
 						FILE *f = fopen("paint.txt", "w");
 						for (int i=0; i<800; i++) {
@@ -161,14 +163,20 @@ int main() {
 						}
 						
 						fclose(f);
+					} else if (barselect == 4) {
+						setColor++;
+						if (setColor > 8)
+							setColor = 1;
+						navbar(barselect, setColor);
+    					render_navbar(setColor);
 					}
 				} else if (c == 9) { // tab
 					clear_screen(800,40);
 					barselect++;
-					if (barselect > 3)
+					if (barselect > 4)
 						barselect = 0;
-					navbar(barselect);
-    				render_navbar();
+					navbar(barselect, setColor);
+    				render_navbar(setColor);
 				}
 				break;
 			}

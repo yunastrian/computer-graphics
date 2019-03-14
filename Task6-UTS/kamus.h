@@ -13,6 +13,16 @@
 
 #define SCREEN_DIAGONAL 1000 // Jumlah maksimum titik yang ada pada diagonal layar
 
+#define BLACK 0
+#define RED 1
+#define ORANGE 2
+#define YELLOW 3
+#define GREEN 4
+#define BLUE 5
+#define INDIGO 6
+#define PURPLE 7
+#define WHITE 8
+
 typedef struct{
     int r,g,b,a;
 } color;
@@ -43,5 +53,5 @@ int isAnomali(int x, int y);
 void draw_cursor(int x, int y, color* c);
 void draw_paint(int x, int y, int z);
 void render_canvas();
-void render_navbar();
-void navbar(int x);
+void render_navbar(int c);
+void navbar(int x, int c);
