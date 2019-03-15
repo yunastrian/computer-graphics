@@ -454,6 +454,15 @@ void navbar(int x, int c) {
       draw_garis(xtemp,xtemp,22,40,&grey);
   	for (int xtemp=107; xtemp<=117; xtemp++)
   	  draw_garis(xtemp,xtemp,26,35,&warna);
+  } else if (x == 5){
+    for (int xtemp = 120; xtemp <132 ; ++xtemp)
+      draw_garis(xtemp,xtemp,22,40,&grey);
+  } else if (x == 6){
+    for (int xtemp = 135; xtemp <149 ; ++xtemp)
+      draw_garis(xtemp,xtemp,22,40,&grey);
+  } else if (x == 7){
+    for (int xtemp = 150; xtemp <165 ; ++xtemp)
+      draw_garis(xtemp,xtemp,22,40,&grey);
   }
 
   // P
@@ -992,4 +1001,81 @@ void navbar(int x, int c) {
   canvas[101][34] = 9;
   canvas[101][35] = 9;
 
+
+  //pensil
+  canvas[125][28] = 9;
+  canvas[126][28] = 9;
+  canvas[127][28] = 9;
+  canvas[128][28] = 9;
+  canvas[129][28] = 9;
+  canvas[130][28] = 9;
+  canvas[131][28] = 9;
+  
+  canvas[124][29] = 9;
+  canvas[126][29] = 9;
+  canvas[131][29] = 9;
+
+  canvas[123][30] = 9;
+  canvas[126][30] = 9;
+  canvas[131][30] = 9;
+
+  canvas[123][31] = 9;
+  canvas[126][31] = 9;
+  canvas[131][31] = 9;
+
+  canvas[124][32] = 9;
+  canvas[126][32] = 9;
+  canvas[131][32] = 9;
+
+  canvas[125][33] = 9;
+  canvas[126][33] = 9;
+  canvas[127][33] = 9;
+  canvas[128][33] = 9;
+  canvas[129][33] = 9;
+  canvas[130][33] = 9;
+  canvas[131][33] = 9;
+
+
+  //line
+  canvas[138][34] = 9;
+  canvas[139][33] = 9;
+  canvas[140][32] = 9;
+  canvas[141][31] = 9;
+  canvas[142][30] = 9;
+  canvas[143][29] = 9;
+  canvas[144][28] = 9; 
+
+
+  //kotak
+  canvas[154][27] = 9;
+  canvas[154][28] = 9;
+  canvas[154][29] = 9;
+  canvas[154][30] = 9;
+  canvas[154][31] = 9;
+  canvas[154][32] = 9;
+  canvas[154][33] = 9;
+  canvas[154][34] = 9;
+
+  canvas[155][27] = 9;
+  canvas[156][27] = 9;
+  canvas[157][27] = 9;
+  canvas[158][27] = 9;
+  canvas[159][27] = 9;
+  canvas[160][27] = 9;
+
+  canvas[155][34] = 9;
+  canvas[156][34] = 9;
+  canvas[157][34] = 9;
+  canvas[158][34] = 9;
+  canvas[159][34] = 9;
+  canvas[160][34] = 9;
+
+  canvas[161][27] = 9;
+  canvas[161][28] = 9;
+  canvas[161][29] = 9;
+  canvas[161][30] = 9;
+  canvas[161][31] = 9;
+  canvas[161][32] = 9;
+  canvas[161][33] = 9;
+  canvas[161][34] = 9; 
 }

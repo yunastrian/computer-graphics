@@ -100,10 +100,11 @@ int main() {
 
     int setColor = RED;
     int active = 0;
-
+    int act2 = 0;
+    int mode=1;
     while (1) {
     	set_mode(1);
-
+    	
     	// Draw Cursor
 		//refresh(0, 800, 0, 600);
 		render_canvas();
@@ -129,7 +130,7 @@ int main() {
 					if (cursory > 44) {
 						cursory -= 3;
 					}
-				} else if (c == 108) { // l
+				} else if ((c == 108) && (mode == 1)) { // l
 					if (!active) {
 						active = 1;
 					} else {
@@ -175,15 +176,21 @@ int main() {
 							setColor = 1;
 						navbar(barselect, setColor);
     					render_navbar(setColor);
+					} else if (barselect == 5){ //pensil
+						mode = 1;
+					} else if (barselect == 6){ //garis
+						mode = 2;
+					} else if (barselect == 7){ //kotak
+						mode = 3;
 					}
 				} else if (c == 9) { // tab
 					clear_screen(800,40);
 					barselect++;
-					if (barselect > 4)
+					if (barselect > 7)
 						barselect = 0;
 					navbar(barselect, setColor);
     				render_navbar(setColor);
-				} else if (c == 103){ // g
+				} else if ((c == 108) && (mode == 2)){ // g
 					int awalx = cursorx;
 					int awaly = cursory;
 					draw_paint(awalx,awaly,setColor);
@@ -209,7 +216,7 @@ int main() {
 								if (cursory > 44) {
 									cursory -= 3;
 								}
-							} else if (a == 103){
+							} else if ((a == 108) && (mode==2)){
 								int akhirx = cursorx;
 								int akhiry = cursory;
 								int length = 0;
@@ -224,7 +231,7 @@ int main() {
 
 						}
 					}
-				}else if (c == 107) { // k fungsi kotak
+				}else if ((c == 108) && (mode==3)) { // fungsi kotak
 					int x1 = cursorx;
 					int y1 = cursory;
 					draw_paint(x1, y1, setColor);
@@ -250,7 +257,7 @@ int main() {
 								if (cursory > 44) {
 									cursory -= 3;
 								}
-							} else if (c == 107) {
+							} else if ((c == 108) && (mode=3)) {
 								int x2 = cursorx;
 								int y2 = cursory;
 								draw_paint(x2, y2, setColor);
@@ -281,8 +288,7 @@ int main() {
 					}
 				}
 				if(c==27){
-					active = 0;
-					exit(5);
+					act2 = 9;
 				}
 				if (active) {
 					draw_paint(cursorx,cursory,setColor);
@@ -290,8 +296,11 @@ int main() {
 				break;
 			}
 		}
+		if (act2 == 9) {
+			break;
+		}
     }
-
+    clear_screen(800,600);
     munmap(fb, screensize);
     close(fb_driver);
     return 0;
