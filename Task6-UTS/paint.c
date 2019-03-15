@@ -7,7 +7,7 @@ void set_mode(int want_key)
 		tcsetattr(STDIN_FILENO, TCSANOW, &old);
 		return;
 	}
- 
+
 	tcgetattr(STDIN_FILENO, &old);
 	new = old;
 	new.c_lflag &= ~(ICANON | ECHO);
@@ -20,11 +20,11 @@ int get_key()
 	struct timeval tv;
 	fd_set fs;
 	tv.tv_usec = tv.tv_sec = 0;
- 
+
 	FD_ZERO(&fs);
 	FD_SET(STDIN_FILENO, &fs);
 	select(STDIN_FILENO + 1, &fs, 0, 0, &tv);
- 
+
 	if (FD_ISSET(STDIN_FILENO, &fs)) {
 		c = getchar();
 		set_mode(0);
@@ -97,7 +97,7 @@ int main() {
     navbar(0,1);
     render_navbar(1);
     int barselect = 0;
-    
+
     int setColor = RED;
     int active = 0;
 
@@ -105,13 +105,13 @@ int main() {
     	set_mode(1);
 
     	// Draw Cursor
-		//refresh(0, 800, 0, 600);    	
+		//refresh(0, 800, 0, 600);
 		render_canvas();
 		draw_cursor(cursorx, cursory, &bg);
     	// Read Key
 		while (1) {
 			int c;
-			
+
 			if (c = get_key()) {
 				if (c == 97) {
 					if (cursorx > 10) { // a
@@ -167,7 +167,7 @@ int main() {
 							}
 
 						}
-						
+
 						fclose(f);
 					} else if (barselect == 4) {
 						setColor++;
@@ -280,8 +280,12 @@ int main() {
 						}
 					}
 				}
+				if(c==27){
+					active = 0;
+					exit(5);
+				}
 				if (active) {
-					draw_paint(cursorx,cursory,setColor);	
+					draw_paint(cursorx,cursory,setColor);
 				}
 				break;
 			}
